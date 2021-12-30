@@ -16,7 +16,12 @@ func GetFile() []string {
 		fmt.Println(err)
 	}
 
-	return strings.Split(string(fileData), "\n")
+	lines := strings.Split(string(fileData), "\n")
+	lastIndex := len(lines) - 1
+	if lines[lastIndex] == "" {
+		lines = lines[:lastIndex]
+	}
+	return lines
 }
 
 func ConvertSliceStringToInt(stringSlice []string) []int {
