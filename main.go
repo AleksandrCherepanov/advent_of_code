@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	advent_2021.Advent_5_2()
+	advent_2021.Advent_6(256)
 }
