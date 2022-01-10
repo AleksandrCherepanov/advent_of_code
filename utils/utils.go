@@ -24,6 +24,17 @@ func GetFile() []string {
 	return lines
 }
 
+func GetFieldInt(input []string) [][]int {
+	field := make([][]int, 0, len(input))
+
+	for _, line := range input {
+		numbers := ConvertSliceStringToInt(strings.Split(string(line), ""))
+		field = append(field, numbers)
+	}
+
+	return field
+}
+
 func ConvertSliceStringToInt(stringSlice []string) []int {
 	result := make([]int, 0, len(stringSlice))
 

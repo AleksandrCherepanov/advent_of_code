@@ -15,7 +15,7 @@ func Advent_6(days int) {
 	initialTime := 6
 	capacity := maxTime + 1
 
-	fishes := make([]int, capacity, capacity)
+	fishes := make([]int, capacity)
 	for _, timer := range timers {
 		fishes[timer]++
 	}
@@ -44,14 +44,4 @@ func Advent_6(days int) {
 
 	sum := utils.SumSliceInt(fishes)
 	fmt.Println(sum)
-}
-
-func printFishes(fishes []int) {
-	for i, v := range fishes {
-		for j := v; j > 0; j-- {
-			fmt.Print(i)
-			fmt.Print(",")
-		}
-	}
-	fmt.Println()
 }

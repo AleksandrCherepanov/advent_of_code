@@ -9,7 +9,7 @@ import (
 
 func Advent_3_1() {
 	input := utils.GetFile()
-	rate := make([]int, len(input[0]), len(input[0]))
+	rate := make([]int, len(input[0]))
 
 	for i := 0; i < len(input); i++ {
 		if input[i] == "" {

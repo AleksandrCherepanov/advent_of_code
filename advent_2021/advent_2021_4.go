@@ -41,22 +41,14 @@ func Advent_4_1() {
 					boardKey := strconv.Itoa(boardIndex)
 					columnKey := boardKey + ":" + strconv.Itoa(elementIndex%5)
 					lineKey := boardKey + ":" + strconv.Itoa(elementIndex/5)
-					if _, ok := winColumn[columnKey]; ok {
-						winColumn[columnKey]++
-					} else {
-						winColumn[columnKey] = 1
-					}
+					winColumn[columnKey]++
 					if winColumn[columnKey] == 5 {
 						winBoard = boardIndex
 						lastNumber = number
 						columnFound = true
 						break
 					}
-					if _, ok := winLine[lineKey]; ok {
-						winLine[lineKey]++
-					} else {
-						winLine[lineKey] = 1
-					}
+					winLine[lineKey]++
 					if winLine[lineKey] == 5 {
 						winBoard = boardIndex
 						lastNumber = number
@@ -121,21 +113,13 @@ func Advent_4_2() {
 					boardKey := strconv.Itoa(boardIndex)
 					columnKey := boardKey + ":" + strconv.Itoa(elementIndex%5)
 					lineKey := boardKey + ":" + strconv.Itoa(elementIndex/5)
-					if _, ok := winColumn[columnKey]; ok {
-						winColumn[columnKey]++
-					} else {
-						winColumn[columnKey] = 1
-					}
+					winColumn[columnKey]++
 					if winColumn[columnKey] == 5 {
 						lastNumber = number
 						columnFound = true
 						break
 					}
-					if _, ok := winLine[lineKey]; ok {
-						winLine[lineKey]++
-					} else {
-						winLine[lineKey] = 1
-					}
+					winLine[lineKey]++
 					if winLine[lineKey] == 5 {
 						lastNumber = number
 						lineFound = true
