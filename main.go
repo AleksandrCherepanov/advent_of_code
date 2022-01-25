@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	advent2015_1 "github.com/AleksandrCherepanov/advent_of_code/advent_2015"
+	advent2015_2 "github.com/AleksandrCherepanov/advent_of_code/advent_2015/2"
 )
 
 func main() {
@@ -16,12 +16,11 @@ func main() {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
-	var input string
+	input := make([]string, 0, 1000)
 	for scanner.Scan() {
-		input = scanner.Text()
-		break
+		input = append(input, scanner.Text())
 	}
 
-	fmt.Println(advent2015_1.Advent2015_1_1(input))
-	fmt.Println(advent2015_1.Advent2015_1_2(input))
+	fmt.Println(advent2015_2.Advent2015_2_1(input))
+	fmt.Println(advent2015_2.Advent2015_2_2(input))
 }
