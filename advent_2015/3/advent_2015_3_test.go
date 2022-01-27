@@ -17,7 +17,7 @@ func TestAdvent2015_3_1(t *testing.T) {
 	for _, testCase := range testCasesAdvent2015_3_1 {
 		result := Advent2015_3_1(testCase.input)
 		if result != testCase.expected {
-			t.Fatalf("%v. Expected: %v. Actual: %v", testCase.caseName, testCase.expected, result)
+			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}
 	}
 }
@@ -37,7 +37,7 @@ func TestAdvent2015_3_2(t *testing.T) {
 	for _, testCase := range testCasesAdvent2015_3_2 {
 		result := Advent2015_3_2(testCase.input)
 		if result != testCase.expected {
-			t.Fatalf("%v. Expected: %v. Actual: %v", testCase.caseName, testCase.expected, result)
+			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}
 	}
 }
