@@ -3,6 +3,7 @@ package field
 import (
 	"errors"
 	"fmt"
+	"strconv"
 )
 
 type FieldInt [][]CellInt
@@ -27,6 +28,14 @@ func (c CellInt) GetX() int {
 
 func (c CellInt) GetY() int {
 	return c.y
+}
+
+func (c CellInt) GetIndex() string {
+	return strconv.Itoa(c.GetX()) + strconv.Itoa(c.GetY())
+}
+
+func (c CellInt) Equals(cell CellInt) bool {
+	return c.GetIndex() == cell.GetIndex()
 }
 
 func NewCellInt(x, y, value int) CellInt {
@@ -59,11 +68,11 @@ func (field FieldInt) GetCell(x, y int) CellInt {
 }
 
 func (field FieldInt) InBounds(x, y int) bool {
-	if y < 0 || y > len(field) {
+	if y < 0 || y >= len(field) {
 		return false
 	}
 
-	if x < 0 || x > len(field[y]) {
+	if x < 0 || x >= len(field[y]) {
 		return false
 	}
 
@@ -82,31 +91,31 @@ func (field FieldInt) Top(cell CellInt) (CellInt, error) {
 	return field.getAdjacent(cell.GetX(), cell.GetY()-1)
 }
 
-func (field FieldInt) TopRightTile(cell CellInt) (CellInt, error) {
+func (field FieldInt) TopRight(cell CellInt) (CellInt, error) {
 	return field.getAdjacent(cell.GetX()+1, cell.GetY()-1)
 }
 
-func (field FieldInt) RightTile(cell CellInt) (CellInt, error) {
+func (field FieldInt) Right(cell CellInt) (CellInt, error) {
 	return field.getAdjacent(cell.GetX()+1, cell.GetY())
 }
 
-func (field FieldInt) RightBottomTile(cell CellInt) (CellInt, error) {
+func (field FieldInt) RightBottom(cell CellInt) (CellInt, error) {
 	return field.getAdjacent(cell.GetX()+1, cell.GetY()+1)
 }
 
-func (field FieldInt) BottomTile(cell CellInt) (CellInt, error) {
+func (field FieldInt) Bottom(cell CellInt) (CellInt, error) {
 	return field.getAdjacent(cell.GetX(), cell.GetY()+1)
 }
 
-func (field FieldInt) BottomLeftTile(cell CellInt) (CellInt, error) {
+func (field FieldInt) BottomLeft(cell CellInt) (CellInt, error) {
 	return field.getAdjacent(cell.GetX()-1, cell.GetY()+1)
 }
 
-func (field FieldInt) LeftTile(cell CellInt) (CellInt, error) {
+func (field FieldInt) Left(cell CellInt) (CellInt, error) {
 	return field.getAdjacent(cell.GetX()-1, cell.GetY())
 }
 
-func (field FieldInt) LeftTopTile(cell CellInt) (CellInt, error) {
+func (field FieldInt) LeftTop(cell CellInt) (CellInt, error) {
 	return field.getAdjacent(cell.GetX()-1, cell.GetY()-1)
 }
 
@@ -117,4 +126,11 @@ func (field FieldInt) Print() {
 		}
 		fmt.Println()
 	}
+}
+
+func (field FieldInt) GetSize() int {
+	if len(field) == 0 {
+		return 0
+	}
+	return len(field) * len(field[0])
 }
