@@ -8,7 +8,7 @@ import (
 )
 
 func Advent_6(days int) {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	timers := utils.ConvertSliceStringToInt(strings.Split(input[0], ","))
 
 	maxTime := 8

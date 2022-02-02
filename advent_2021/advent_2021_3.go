@@ -8,7 +8,7 @@ import (
 )
 
 func Advent_3_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	rate := make([]int, len(input[0]))
 
 	for i := 0; i < len(input); i++ {
@@ -42,7 +42,7 @@ func Advent_3_1() {
 }
 
 func Advent_3_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	input = input[:len(input)-1]
 
 	oxgRate := calculateRate(input, mostBit)

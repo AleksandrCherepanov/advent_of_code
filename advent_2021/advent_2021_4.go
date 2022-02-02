@@ -9,7 +9,7 @@ import (
 )
 
 func Advent_4_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	numberString := strings.Split(strings.Trim(input[0], " "), ",")
 	numbers := utils.ConvertSliceStringToInt(numberString)
 
@@ -77,7 +77,7 @@ func Advent_4_1() {
 }
 
 func Advent_4_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	numberString := strings.Split(strings.Trim(input[0], " "), ",")
 	numbers := utils.ConvertSliceStringToInt(numberString)
 

@@ -8,7 +8,7 @@ import (
 )
 
 func Advent_11_1() {
-	field := utils.GetFieldInt(utils.GetFile())
+	field := utils.GetFieldInt(utils.GetFile("input.txt"))
 
 	steps := 100
 	count := 0
@@ -38,7 +38,7 @@ func Advent_11_1() {
 }
 
 func Advent_11_2() {
-	field := utils.GetFieldInt(utils.GetFile())
+	field := utils.GetFieldInt(utils.GetFile("input.txt"))
 
 	step := 0
 	maxCount := len(field) * len(field[0])

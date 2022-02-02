@@ -6,7 +6,7 @@ import (
 )
 
 func Advent_2_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	commands, directions := utils.SplitSliceStringToStringIntSlice(input)
 
 	x := 0
@@ -32,7 +32,7 @@ func Advent_2_1() {
 }
 
 func Advent_2_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	commands, directions := utils.SplitSliceStringToStringIntSlice(input)
 
 	x := 0

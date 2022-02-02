@@ -9,7 +9,7 @@ import (
 )
 
 func Advent_13_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 
 	xSlice, ySlice, foldSlice, xyMap := parseInput(input)
 
@@ -36,7 +36,7 @@ func Advent_13_1() {
 }
 
 func Advent_13_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 
 	xSlice, ySlice, foldSlice, _ := parseInput(input)
 

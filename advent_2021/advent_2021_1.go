@@ -7,7 +7,7 @@ import (
 )
 
 func Advent_1_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	intSlice := utils.ConvertSliceStringToInt(input)
 
 	prevValue := intSlice[0]
@@ -23,7 +23,7 @@ func Advent_1_1() {
 }
 
 func Advent_1_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	intSlice := utils.ConvertSliceStringToInt(input)
 
 	prevValue := intSlice[0] + intSlice[1] + intSlice[2]
