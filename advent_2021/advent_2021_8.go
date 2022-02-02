@@ -10,7 +10,7 @@ import (
 )
 
 func Advent_8_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 
 	numbers := map[int]int{
 		2: 1,
@@ -43,7 +43,7 @@ func Advent_8_1() {
 }
 
 func Advent_8_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 
 	sum := 0
 	for _, line := range input {

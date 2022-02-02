@@ -9,7 +9,7 @@ import (
 )
 
 func Advent_5_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	field := make(map[string]int, 0)
 	for _, line := range input {
 		coord := strings.Split(strings.ReplaceAll(line, " -> ", ","), ",")
@@ -108,7 +108,7 @@ func writeDiagonalLineToField(field map[string]int, x1, x2, y1, y2 int) {
 }
 
 func Advent_5_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	field := make(map[string]int, 0)
 	for _, line := range input {
 		coord := strings.Split(strings.ReplaceAll(line, " -> ", ","), ",")

@@ -9,7 +9,7 @@ import (
 )
 
 func Advent_7_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	positions := utils.ConvertSliceStringToInt(strings.Split(input[0], ","))
 
 	sort.Ints(positions)
@@ -38,7 +38,7 @@ func Advent_7_1() {
 }
 
 func Advent_7_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 	positions := utils.ConvertSliceStringToInt(strings.Split(input[0], ","))
 
 	sort.Ints(positions)

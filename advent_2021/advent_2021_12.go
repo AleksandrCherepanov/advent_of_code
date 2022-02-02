@@ -72,7 +72,7 @@ func (pc *PathCounter) countWithSingleCaves(src, dst string) {
 }
 
 func Advent_12_1() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 
 	graph := make(map[string][]string, len(input))
 	for _, line := range input {
@@ -96,7 +96,7 @@ func isBigCave(cave string) bool {
 }
 
 func Advent_12_2() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 
 	graph := make(map[string][]string, len(input))
 	for _, line := range input {

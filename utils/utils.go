@@ -10,8 +10,8 @@ import (
 	"strings"
 )
 
-func GetFile() []string {
-	fileData, err := ioutil.ReadFile("input.txt")
+func GetFile(name string) []string {
+	fileData, err := ioutil.ReadFile(name)
 	if err != nil {
 		fmt.Println(err)
 	}

@@ -8,7 +8,7 @@ import (
 )
 
 func Advent_10() {
-	input := utils.GetFile()
+	input := utils.GetFile("input.txt")
 
 	points := map[string]int{
 		")": 3,

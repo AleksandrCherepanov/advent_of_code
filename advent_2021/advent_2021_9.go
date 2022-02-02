@@ -9,7 +9,7 @@ import (
 )
 
 func Advent_9_1() {
-	field := utils.GetFieldInt(utils.GetFile())
+	field := utils.GetFieldInt(utils.GetFile("input.txt"))
 
 	min := 0
 	for i := 0; i < len(field); i++ {
@@ -25,7 +25,7 @@ func Advent_9_1() {
 }
 
 func Advent_9_2() {
-	field := utils.GetFieldInt(utils.GetFile())
+	field := utils.GetFieldInt(utils.GetFile("input.txt"))
 
 	minPoints := make([]tiles.Tile, 0)
 	for i := 0; i < len(field); i++ {
