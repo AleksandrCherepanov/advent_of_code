@@ -39,17 +39,37 @@ func Advent_17_2() {
 	yMin, _ := strconv.Atoi(yRange[0])
 	yMax, _ := strconv.Atoi(yRange[1])
 
-	dx := xMax - xMin
-	if dx < 0 {
-		dx *= -1
-	}
-	dx++
+	yMinAbs := yMin * -1
+	count := 0
+	for y := yMin; y < yMinAbs; y++ {
+		for x := 1; x <= xMax; x++ {
+			vx := x
+			vy := y
+			xp := 0
+			yp := 0
+			for t := 0; t < 2*yMinAbs+1; t++ {
+				xp += vx
+				yp += vy
 
-	dy := yMin - yMax
-	if dy < 0 {
-		dy *= -1
-	}
-	dy++
+				vx -= 1
+				if vx < 0 {
+					vx = 0
+				}
 
-	fmt.Println(dx * dy * 2)
+				vy -= 1
+
+				if xMin <= xp && xp <= xMax && yp <= yMax && yp >= yMin {
+					count++
+					break
+				}
+
+				if xp > xMax && yp < yMin {
+					break
+				}
+
+			}
+		}
+	}
+
+	fmt.Println(count)
 }
