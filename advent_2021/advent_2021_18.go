@@ -2,6 +2,7 @@ package advent_2021
 
 import (
 	"fmt"
+	"math"
 	"regexp"
 	"strconv"
 	"strings"
@@ -46,7 +47,6 @@ func explode(list string) string {
 
 			left := tmpList[:nestedPairRange[0]]
 			leftNumbersRange := leftRe.FindAllStringIndex(left, -1)
-			fmt.Println(left, leftNumbersRange)
 			if leftNumbersRange != nil {
 				leftNumberRange := leftNumbersRange[len(leftNumbersRange)-1]
 				leftNumber, _ := strconv.Atoi(left[leftNumberRange[0] : leftNumberRange[1]-1])
@@ -78,17 +78,30 @@ func explode(list string) string {
 	return tmpList
 }
 
-func split_pair(list string) string {
-	return ""
-}
+func splitNumber(list string) (string, bool) {
+	re, _ := regexp.Compile(`\d\d+`)
 
-func needExplode(list string) bool {
+	tmpList := list
 
-	return true
-}
+	bigNumberRange := re.FindStringIndex(tmpList)
+	if bigNumberRange == nil {
+		return tmpList, false
+	}
 
-func needSplit(list string) bool {
-	return true
+	left := tmpList[:bigNumberRange[0]]
+	right := tmpList[bigNumberRange[1]:]
+
+	numberString := tmpList[bigNumberRange[0]:bigNumberRange[1]]
+	numberInt, _ := strconv.Atoi(numberString)
+
+	var half float64
+	half = float64(numberInt) / float64(2)
+	lowHalfInt := int(math.Floor(half))
+	highHalfInt := int(math.Ceil(half))
+
+	tmpList = left + "[" + strconv.Itoa(lowHalfInt) + "," + strconv.Itoa(highHalfInt) + "]" + right
+
+	return tmpList, true
 }
 
 func Advent_18_1() {
@@ -110,7 +123,6 @@ func Advent_18_1() {
 	}
 
 	for i := 0; i < len(test); i++ {
-		fmt.Println(test[i])
 		result := explode(test[i])
 		if result != expected[i] {
 			fmt.Println("actual: " + result)
@@ -118,6 +130,15 @@ func Advent_18_1() {
 		}
 	}
 
+	test2 := "[[[[0,7],4],[15,[0,13]]],[1,1]]"
+
+	tr := true
+	for tr {
+		r, ch := splitNumber(test2)
+		fmt.Println(r)
+		tr = ch
+		test2 = r
+	}
 	//for _, line := range input {
 	//	fmt.Println(line)
 	//	fmt.Println(needExplode(line))
