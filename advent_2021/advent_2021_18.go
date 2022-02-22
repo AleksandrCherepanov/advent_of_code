@@ -16,7 +16,21 @@ func add(list1, list2 string) string {
 }
 
 func reduce(list string) string {
-	return ""
+	tmpList := list
+	do := true
+	for do {
+		r := explode(tmpList)
+		fmt.Println("E: ", r)
+		r, ch := splitNumber(r)
+		fmt.Println("R: ", r)
+		tmpList = r
+		if ch {
+			continue
+		}
+		do = ch
+	}
+
+	return tmpList
 }
 
 func explode(list string) string {
@@ -108,37 +122,41 @@ func Advent_18_1() {
 	input := utils.GetFile("input.txt")
 	fmt.Println(input)
 
-	test := []string{
-		"[[[[[9,8],1],2],3],4]",
-		"[7,[6,[5,[4,[3,2]]]]]",
-		"[[6,[5,[4,[3,2]]]],1]",
-		"[[3,[2,[1,[7,3]]]],[6,[5,[4,[3,2]]]]]",
-	}
+	test := "[[[[[4,3],4],4],[7,[[8,4],9]]],[1,1]]"
+	r := reduce(test)
+	fmt.Println(r)
 
-	expected := []string{
-		"[[[[0,9],2],3],4]",
-		"[7,[6,[5,[7,0]]]]",
-		"[[6,[5,[7,0]]],3]",
-		"[[3,[2,[8,0]]],[9,[5,[7,0]]]]",
-	}
+	//test := []string{
+	//	"[[[[[9,8],1],2],3],4]",
+	//	"[7,[6,[5,[4,[3,2]]]]]",
+	//	"[[6,[5,[4,[3,2]]]],1]",
+	//	"[[3,[2,[1,[7,3]]]],[6,[5,[4,[3,2]]]]]",
+	//}
 
-	for i := 0; i < len(test); i++ {
-		result := explode(test[i])
-		if result != expected[i] {
-			fmt.Println("actual: " + result)
-			fmt.Println("expected: " + expected[i])
-		}
-	}
+	//expected := []string{
+	//	"[[[[0,9],2],3],4]",
+	//	"[7,[6,[5,[7,0]]]]",
+	//	"[[6,[5,[7,0]]],3]",
+	//	"[[3,[2,[8,0]]],[9,[5,[7,0]]]]",
+	//}
 
-	test2 := "[[[[0,7],4],[15,[0,13]]],[1,1]]"
+	//for i := 0; i < len(test); i++ {
+	//	result := explode(test[i])
+	//	if result != expected[i] {
+	//		fmt.Println("actual: " + result)
+	//		fmt.Println("expected: " + expected[i])
+	//	}
+	//}
 
-	tr := true
-	for tr {
-		r, ch := splitNumber(test2)
-		fmt.Println(r)
-		tr = ch
-		test2 = r
-	}
+	//test2 := "[[[[0,7],4],[15,[0,13]]],[1,1]]"
+
+	//tr := true
+	//for tr {
+	//	r, ch := splitNumber(test2)
+	//	fmt.Println(r)
+	//	tr = ch
+	//	test2 = r
+	//}
 	//for _, line := range input {
 	//	fmt.Println(line)
 	//	fmt.Println(needExplode(line))
