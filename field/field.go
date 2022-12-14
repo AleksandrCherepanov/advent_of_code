@@ -31,7 +31,7 @@ func (c CellInt) GetY() int {
 }
 
 func (c CellInt) GetIndex() string {
-	return strconv.Itoa(c.GetX()) + strconv.Itoa(c.GetY())
+	return strconv.Itoa(c.GetX()*1000 + c.GetY())
 }
 
 func (c CellInt) Equals(cell CellInt) bool {
