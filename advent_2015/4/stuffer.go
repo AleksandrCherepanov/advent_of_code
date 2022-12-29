@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func Advent2015_4(input string, compare string) int {
+func Stuffer(input string, compare string) int {
 	if input == "" {
 		return 0
 	}

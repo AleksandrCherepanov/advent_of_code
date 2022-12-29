@@ -1,6 +1,6 @@
 package advent2015_1
 
-func Advent2015_1_1(input string) int {
+func Lisp1(input string) int {
 	floor := 0
 	for _, inputRune := range input {
 		inputChar := string(inputRune)
@@ -14,7 +14,7 @@ func Advent2015_1_1(input string) int {
 	return floor
 }
 
-func Advent2015_1_2(input string) int {
+func Lisp2(input string) int {
 	floor := 0
 	for pos, inputRune := range input {
 		inputChar := string(inputRune)

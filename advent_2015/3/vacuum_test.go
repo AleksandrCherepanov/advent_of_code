@@ -2,7 +2,7 @@ package advent_2105_3
 
 import "testing"
 
-var testCasesAdvent2015_3_1 = []struct {
+var testCasesVacuum1 = []struct {
 	caseName string
 	input    string
 	expected int
@@ -13,16 +13,16 @@ var testCasesAdvent2015_3_1 = []struct {
 	{"case #3", "^v^v^v^v^v", 2},
 }
 
-func TestAdvent2015_3_1(t *testing.T) {
-	for _, testCase := range testCasesAdvent2015_3_1 {
-		result := Advent2015_3_1(testCase.input)
+func TestVacuum1(t *testing.T) {
+	for _, testCase := range testCasesVacuum1 {
+		result := Vacuum1(testCase.input)
 		if result != testCase.expected {
 			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}
 	}
 }
 
-var testCasesAdvent2015_3_2 = []struct {
+var testCasesVacuum2 = []struct {
 	caseName string
 	input    string
 	expected int
@@ -33,9 +33,9 @@ var testCasesAdvent2015_3_2 = []struct {
 	{"case #3", "^v^v^v^v^v", 11},
 }
 
-func TestAdvent2015_3_2(t *testing.T) {
-	for _, testCase := range testCasesAdvent2015_3_2 {
-		result := Advent2015_3_2(testCase.input)
+func TestVacuum2(t *testing.T) {
+	for _, testCase := range testCasesVacuum2 {
+		result := Vacuum2(testCase.input)
 		if result != testCase.expected {
 			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}

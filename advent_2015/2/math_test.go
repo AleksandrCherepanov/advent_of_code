@@ -21,7 +21,7 @@ func TestCalcSquareFeet(t *testing.T) {
 	}
 }
 
-var testCasesAdvent2015_2_1 = []struct {
+var testCasesMath1 = []struct {
 	caseName string
 	input    []string
 	expected int
@@ -30,9 +30,9 @@ var testCasesAdvent2015_2_1 = []struct {
 	{"case #1", []string{"2x3x4", "1x1x10"}, 101},
 }
 
-func TestAdvent2015_2_1(t *testing.T) {
-	for _, testCase := range testCasesAdvent2015_2_1 {
-		result := Advent2015_2_1(testCase.input)
+func TestMath1(t *testing.T) {
+	for _, testCase := range testCasesMath1 {
+		result := Math1(testCase.input)
 		if result != testCase.expected {
 			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}
@@ -77,7 +77,7 @@ func TestFindFeetOfRibbon(t *testing.T) {
 	}
 }
 
-var testCasesAdvent2015_2_2 = []struct {
+var testCasesMath2 = []struct {
 	caseName string
 	input    []string
 	expected int
@@ -86,9 +86,9 @@ var testCasesAdvent2015_2_2 = []struct {
 	{"case #1", []string{"2x3x4", "1x1x10"}, 48},
 }
 
-func TestAdvent2015_2_2(t *testing.T) {
-	for _, testCase := range testCasesAdvent2015_2_2 {
-		result := Advent2015_2_2(testCase.input)
+func TestMath2(t *testing.T) {
+	for _, testCase := range testCasesMath2 {
+		result := Math2(testCase.input)
 		if result != testCase.expected {
 			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}

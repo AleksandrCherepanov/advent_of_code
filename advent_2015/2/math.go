@@ -72,7 +72,7 @@ func calcFeetOfRibbon(sizes string) int {
 	return minSize + calcRibbon(sizesInt)
 }
 
-func Advent2015_2_1(input []string) int {
+func Math1(input []string) int {
 	sum := 0
 	for _, sizes := range input {
 		squareFeet := calcSquareFeet(sizes)
@@ -82,7 +82,7 @@ func Advent2015_2_1(input []string) int {
 	return sum
 }
 
-func Advent2015_2_2(input []string) int {
+func Math2(input []string) int {
 	sum := 0
 	for _, sizes := range input {
 		ribbon := calcFeetOfRibbon(sizes)

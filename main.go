@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	advent_2022 "github.com/AleksandrCherepanov/advent_of_code/advent_2022/13"
+	advent "github.com/AleksandrCherepanov/advent_of_code/advent_2015/8"
 )
 
 func main() {
@@ -21,6 +21,6 @@ func main() {
 		input = append(input, scanner.Text())
 	}
 
-	fmt.Println(advent_2022.Distress1(input))
-	fmt.Println(advent_2022.Distress2(input))
+	fmt.Println(advent.Sticks1(input))
+	fmt.Println(advent.Sticks2(input))
 }

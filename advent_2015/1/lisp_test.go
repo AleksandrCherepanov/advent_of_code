@@ -19,9 +19,9 @@ var testCases1 = []struct {
 	{"case #9", ")))", -3},
 }
 
-func TestAdvent2015_1_1(t *testing.T) {
+func TestLisp1(t *testing.T) {
 	for _, testCase := range testCases1 {
-		result := Advent2015_1_1(testCase.input)
+		result := Lisp1(testCase.input)
 		if result != testCase.expected {
 			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}
@@ -45,9 +45,9 @@ var testCases2 = []struct {
 	{"case #9", ")))", 1},
 }
 
-func TestAdvent2015_1_2(t *testing.T) {
+func TestLisp2(t *testing.T) {
 	for _, testCase := range testCases2 {
-		result := Advent2015_1_2(testCase.input)
+		result := Lisp2(testCase.input)
 		if result != testCase.expected {
 			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}

@@ -2,7 +2,7 @@ package advent_2015_4
 
 import "testing"
 
-var testCasesAdvent2015_4 = []struct {
+var testCasesStuffer = []struct {
 	caseName string
 	input    string
 	compare  string
@@ -13,9 +13,9 @@ var testCasesAdvent2015_4 = []struct {
 	{"case #2", "pqrstuv", "00000", 1048970},
 }
 
-func TestAdvent2015_4(t *testing.T) {
-	for _, testCase := range testCasesAdvent2015_4 {
-		result := Advent2015_4(testCase.input, testCase.compare)
+func TestStuffer(t *testing.T) {
+	for _, testCase := range testCasesStuffer {
+		result := Stuffer(testCase.input, testCase.compare)
 		if result != testCase.expected {
 			t.Fatalf(`%v. Expected: %v. Actual: %v`, testCase.caseName, testCase.expected, result)
 		}

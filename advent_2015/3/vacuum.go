@@ -9,7 +9,7 @@ var instructions = map[string][]int{
 	"<": {-1, 0},
 }
 
-func Advent2015_3_1(input string) int {
+func Vacuum1(input string) int {
 	x := 0
 	y := 0
 	visited := make(map[string]int, 0)
@@ -24,7 +24,7 @@ func Advent2015_3_1(input string) int {
 	return len(visited)
 }
 
-func Advent2015_3_2(input string) int {
+func Vacuum2(input string) int {
 	x := 0
 	y := 0
 	xr := 0

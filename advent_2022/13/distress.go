@@ -123,7 +123,6 @@ func compare(s1, s2 []element) int {
 		}
 		if s1[i].isSlice == false && s2[i].isSlice == true {
 			v := parse("[" + strconv.Itoa(s1[i].valInt) + "]")
-			//s1[i].valSlice = append(s1[i].valSlice, element{valInt: s1[i].valInt})
 			result = compare(v.valSlice[0].valSlice, s2[i].valSlice)
 			if result == 0 {
 				i++
@@ -133,7 +132,6 @@ func compare(s1, s2 []element) int {
 		}
 		if s1[i].isSlice == true && s2[i].isSlice == false {
 			v := parse("[" + strconv.Itoa(s2[i].valInt) + "]")
-			//s2[i].valSlice = append(s2[i].valSlice, element{valInt: s2[i].valInt})
 			result = compare(s1[i].valSlice, v.valSlice[0].valSlice)
 			if result == 0 {
 				i++
